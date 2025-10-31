@@ -1,0 +1,7 @@
+Hola Eafit
+Esto es una prueba con acentos: áéíóú ñ Ñ ü.
+Líneas múltiples:
+1) abcdefghijklmnopqrstuvwxyz
+2) 0123456789
+3) símbolos: !@#$%^&*()_+-=[]{};':",.<>/?
+Fin.
