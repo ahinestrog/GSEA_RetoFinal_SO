@@ -1,7 +1,12 @@
 # GSEA_RetoFinal_SO
 
 ## Uso:
-```c:
-./gsea -c -i input.txt -o output.rle
-./gsea -d -i output.rle -o output.txt
+
+### Para correrlo
+```shell:
+make run
+```
+### Para limpiar
+```shell:
+make clean
 ```
