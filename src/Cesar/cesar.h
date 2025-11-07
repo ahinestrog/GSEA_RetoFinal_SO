@@ -1,5 +1,16 @@
-// Funcion para encriptar un archivo usando el cifrado César usando una clave entre 0 y 255 (ya que es para bytes)
-int cesar_encrypt_file(const char *input_path, const char *output_path, unsigned char key);
+// cesar.h - Cifrado César
+#ifndef CESAR_H
+#define CESAR_H
 
-// Funcion para desencriptar un archivo usando el cifrado César
+// Encriptar/desencriptar archivo individual
+int cesar_encrypt_file(const char *input_path, const char *output_path, unsigned char key);
 int cesar_decrypt_file(const char *input_path, const char *output_path, unsigned char key);
+
+// Encriptar/desencriptar carpeta con hilos (crea .csar = César Archive)
+int cesar_encrypt_directory(const char *input_path, const char *output_path, unsigned char key, int num_threads);
+int cesar_decrypt_directory(const char *input_path, const char *output_path, unsigned char key);
+
+// Detectar si es un archivo .csar
+int is_csar_archive(const char *path);
+
+#endif // CESAR_H
