@@ -4,6 +4,10 @@
 #include <errno.h> // open
 #include <stdio.h> //Solo para perror y printf
 #include <stdlib.h>
+#include <pthread.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <string.h>
 
 // Funcion que aplica la transformacion César a un buffer
 static void cesar_transform_buffer(unsigned char *buf, ssize_t len, unsigned char key, int decrypt){
@@ -79,12 +83,6 @@ int cesar_encrypt_file(const char *input_path, const char *output_path, unsigned
 int cesar_decrypt_file(const char *input_path, const char *output_path, unsigned char key){
     return cesar_do(input_path, output_path, key, 1);
 }
-
-// ============= Soporte para carpetas con hilos (minimalista) =============
-#include <pthread.h>
-#include <dirent.h>
-#include <sys/stat.h>
-#include <string.h>
 
 #define MAX_FILES_CESAR 512
 static const char MAGIC_CSAR[8] = "CSAR1000";
